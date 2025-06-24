@@ -16,7 +16,11 @@ export const metadata = {
     title: 'まいにち がんばろう！ - がくしゅうカレンダー',
     description: '小学2年生向けの楽しい学習管理アプリ',
   },
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#8B5CF6',
 }
 
