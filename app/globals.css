@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500;700&display=swap');
+
+@layer base {
+  body {
+    font-family: 'Kiwi Maru', sans-serif;
+    @apply antialiased;
+  }
+}
+
 @keyframes bounce-in {
   0% {
     transform: scale(0.3);
@@ -19,6 +28,63 @@
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .animate-bounce-in {
   animation: bounce-in 0.6s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-purple-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-400 rounded-full hover:bg-purple-500;
+}
+
+/* 選択時の色 */
+::selection {
+  @apply bg-pink-200 text-purple-800;
 }
